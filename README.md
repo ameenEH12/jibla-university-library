@@ -43,7 +43,7 @@ Before installing the project, ensure that you have:
 
 ```bash
 git clone https://github.com/ameenEH12/jibla-university-library.git
-cd REPOSITORY
+cd jibla-university-library
 ```
 
 
