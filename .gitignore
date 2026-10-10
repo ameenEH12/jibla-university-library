@@ -1,0 +1,54 @@
+*.log
+.DS_Store
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+/.fleet
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+/auth.json
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+Homestead.json
+Homestead.yaml
+Thumbs.db
+
+# Private environment and credentials
+.env.*
+!.env.example
+!.env.testing.example
+*.pem
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Private environment and credentials
+.env.*
+!.env.example
+!.env.testing.example
+*.pem
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Local database - do not publish
+/database/database.sqlite
+/database/*.sqlite
+/database/*.sqlite3
+
+# Never publish local environment secrets
+.env
+.env.*
+!.env.example

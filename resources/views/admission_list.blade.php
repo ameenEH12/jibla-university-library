@@ -1,0 +1,1 @@
+@include('files_list', ['dept' => 'قسم القبول', 'type' => 'exams'])
