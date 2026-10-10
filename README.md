@@ -1,59 +1,186 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Jibla University e-Library
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A web-based electronic library designed to help Jibla University students and faculty members access, organize, and manage academic learning materials in one place.
 
-## About Laravel
+## About the Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Jibla University e-Library** is an academic resource platform built with Laravel. It provides a centralized environment for organizing educational content and making learning resources easier to access.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+The project aims to support digital learning by organizing academic materials, books, and subjects through a web-based interface.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Features
 
-## Learning Laravel
+- **Authentication:** User authentication with Google sign-in integration.
+- **Role-Based Access:** Support for different user roles, including administrators, doctors, and students.
+- **Academic Departments:** Organize academic content by departments and subjects.
+- **Digital Library:** Manage and access books and educational materials.
+- **File Management:** Upload and organize academic resources.
+- **Search:** Find relevant educational content.
+- **User Management:** Administrative tools for managing users and academic resources.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## Technology Stack
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Backend:** Laravel 12
+- **Programming Language:** PHP 8.2+
+- **Database:** Configurable through Laravel's database configuration
+- **Frontend:** Blade templates, HTML, CSS, and JavaScript
+- **Dependency Management:** Composer and npm
+- **Authentication:** Laravel authentication with Google sign-in integration
 
-## Laravel Sponsors
+## Requirements
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Before installing the project, ensure that you have:
 
-### Premium Partners
+- PHP 8.2 or later
+- Composer
+- Node.js and npm
+- A supported database, such as MySQL or SQLite
+- Git
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/ameenEH12/jibla-university-library.git
+cd REPOSITORY
+```
+
+
+### 2. Install PHP Dependencies
+
+```bash
+composer install
+```
+
+### 3. Configure Environment Variables
+
+Create your local environment file:
+
+```bash
+cp .env.example .env
+```
+
+On Windows PowerShell, use:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Configure the database connection and other required settings in `.env`.
+
+**Never commit your `.env` file or publish private credentials.**
+
+### 4. Generate the Application Key
+
+```bash
+php artisan key:generate
+```
+
+### 5. Configure the Database
+
+Set your database connection details in `.env`.
+
+Run the migrations:
+
+```bash
+php artisan migrate
+```
+
+Run seeders only if required by your local setup:
+
+```bash
+php artisan db:seed
+```
+
+### 6. Install Frontend Dependencies
+
+```bash
+npm install
+```
+
+Build the frontend assets:
+
+```bash
+npm run build
+```
+
+### 7. Configure Google Sign-In
+
+If Google sign-in is required, configure the appropriate Google OAuth credentials in your local `.env` file.
+
+Set the authorized redirect URI in the Google Cloud project to match the callback route configured by the application.
+
+Do not publish OAuth client secrets or other private credentials.
+
+### 8. Start the Development Server
+
+```bash
+php artisan serve
+```
+
+Open the local URL displayed by Laravel, typically:
+
+```text
+http://127.0.0.1:8000
+```
+
+## Project Structure
+
+```text
+app/
+├── Http/
+│   └── Controllers/
+├── Models/
+└── Providers/
+
+bootstrap/
+config/
+database/
+├── factories/
+├── migrations/
+└── seeders/
+
+public/
+├── images/
+└── index.php
+
+resources/
+├── css/
+├── js/
+└── views/
+
+routes/
+storage/
+tests/
+```
+
+## Security
+
+- Keep `.env` and all private credentials out of version control.
+- Never publish OAuth client secrets, API keys, or private keys.
+- Keep uploaded books and other private or user-provided files out of the public source repository unless publication is explicitly intended.
+- Configure production environment variables securely.
+- Review access permissions before deploying the application.
+
+## Project Status
+
+This project is under development. Features and installation requirements may evolve as development continues.
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Contributions, suggestions, and bug reports are welcome.
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Fork the repository.
+2. Create a feature branch.
+3. Make your changes.
+4. Test your changes.
+5. Submit a pull request describing your contribution.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+No license has been specified yet. Until a license is added, the repository should not be assumed to grant permission to reuse, distribute, or modify its code.
+
+## Acknowledgments
+
+Developed as an academic project to support digital access to educational resources at Jibla University.
